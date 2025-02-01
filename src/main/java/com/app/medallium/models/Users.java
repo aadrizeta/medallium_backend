@@ -32,7 +32,6 @@ public class Users {
     @Column(name = "last_name")
     private String lastName;
 
-    private String phone;
 
     @Column(nullable = false)
     private String password;
@@ -85,14 +84,6 @@ public class Users {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getPassword() {
