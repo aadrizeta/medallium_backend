@@ -1,5 +1,7 @@
 package com.app.medallium.services;
 
+import com.app.medallium.dto.ApiDelivery;
+import com.app.medallium.dto.LoginResponse;
 import com.app.medallium.models.Roles;
 import com.app.medallium.models.Users;
 import com.app.medallium.repositories.RolesRepository;
@@ -102,6 +104,20 @@ public class UserService {
         return this.userRepository.save(newUser); // Guardamos el usuario.
     }
 
+    public ApiDelivery login(String email, String password) {
+        //Users optionalUser = this.userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException());
+        Optional<Users> optionalUser = this.userRepository.findByEmail(email);
+        if (optionalUser.isEmpty()){
+            return new ApiDelivery<>("User not found", false, 404, null, "not found");
+        }
+        Users user = optionalUser.get();
+        if (!this.passwordEncoder.matches(password, user.getPassword())){
+            return new ApiDelivery("Password Incorrect", false, 400, null, "incorrect password");
+        }
+        String token = this.createToken(email);
+        LoginResponse login = new LoginResponse(user, token);
+        return new ApiDelivery("Login Success", true, 200, null, "login successful");
+    }
 
     public String createToken(String email) {
         return this.jwtUtil.generateToken(email);

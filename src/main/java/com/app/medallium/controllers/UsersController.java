@@ -1,5 +1,7 @@
 package com.app.medallium.controllers;
 
+import com.app.medallium.dto.ApiDelivery;
+import com.app.medallium.dto.LoginRequest;
 import com.app.medallium.models.Users;
 import com.app.medallium.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,13 @@ public class UsersController {
     public ResponseEntity<Users> createUser(@RequestBody Users user) {
         Users createdUser = usersService.createUser(user);
         return ResponseEntity.ok(createdUser);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Object> login(@RequestBody LoginRequest credentials){
+        ApiDelivery respoonse = this.usersService.login(credentials.getEmail(),credentials.getPassword());
+        return ResponseEntity.status(respoonse.getStatus()).body(respoonse);
+
     }
 
 }
