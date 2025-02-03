@@ -32,7 +32,7 @@ public class SecurityConfig {
                                 "/users/get-users",
                                 "/users/create"
                         ).permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .addFilterBefore(new JwtAuthenticationFilter(this.jwtUtil),
                         org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);

@@ -32,6 +32,7 @@ public class Users {
     @Column(name = "last_name")
     private String lastName;
 
+    private String user;
 
     @Column(nullable = false)
     private String password;
@@ -50,7 +51,6 @@ public class Users {
             joinColumns = @JoinColumn(name="user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    @JsonManagedReference
     private Set<Roles> roles = new HashSet<>();
 
     // Getters & Setters
@@ -126,4 +126,19 @@ public class Users {
         this.roles = roles;
     }
 
+    public Long getId_User() {
+        return id_User;
+    }
+
+    public void setId_User(Long id_User) {
+        this.id_User = id_User;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 }
