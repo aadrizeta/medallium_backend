@@ -16,7 +16,12 @@ public class Tribus {
 
     private String tipoBonus;
 
+    @Column(length = 10000)
     private String descripcion;
+
+    private String image;
+
+    private String nombreJapones ;
 
     public Long getId_Tribu() {
         return id_Tribu;
@@ -56,5 +61,21 @@ public class Tribus {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getNombreJapones() {
+        return nombreJapones;
+    }
+
+    public void setNombreJapones(String nombreJapones) {
+        this.nombreJapones = nombreJapones;
     }
 }
