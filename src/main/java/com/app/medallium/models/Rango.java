@@ -11,11 +11,14 @@ public class Rango {
 
     private String nombre;
 
+    @Column(length = 10000)
     private String descripcion;
 
     private String caracteristicasGenerales;
 
     private String tipoBonus;
+
+    private String image;
 
     public Long getId_Rango() {
         return id_Rango;
@@ -55,5 +58,13 @@ public class Rango {
 
     public void setTipoBonus(String tipoBonus) {
         this.tipoBonus = tipoBonus;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

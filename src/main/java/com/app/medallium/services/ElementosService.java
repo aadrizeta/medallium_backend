@@ -28,6 +28,7 @@ public class ElementosService {
         newElemento.setFortaleza(elemento.getFortaleza());
         newElemento.setDebilidad(elemento.getDebilidad());
         newElemento.setDescripcion(elemento.getDescripcion());
+        newElemento.setImage(elemento.getImage());
         return this.elementoRepository.save(newElemento);
     }
 
