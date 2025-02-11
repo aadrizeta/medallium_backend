@@ -16,7 +16,10 @@ public class Elemento {
 
     private String debilidad;
 
+    @Column(length = 10000)
     private String descripcion;
+
+    private String image;
 
     public Long getId_Elemento() {
         return id_Elemento;
@@ -56,5 +59,13 @@ public class Elemento {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

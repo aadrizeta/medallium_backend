@@ -9,13 +9,16 @@ public class Rango {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Rango;
 
-    private String nombre;
+    private String name;
 
+    @Column(length = 10000)
     private String descripcion;
 
     private String caracteristicasGenerales;
 
     private String tipoBonus;
+
+    private String image;
 
     public Long getId_Rango() {
         return id_Rango;
@@ -25,12 +28,12 @@ public class Rango {
         this.id_Rango = id_Rango;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescripcion() {
@@ -55,5 +58,13 @@ public class Rango {
 
     public void setTipoBonus(String tipoBonus) {
         this.tipoBonus = tipoBonus;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
