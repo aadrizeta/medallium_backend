@@ -28,8 +28,10 @@ public class DetallesYokai  {
 
     private String comida;
 
-    //@Column(length = 10000)
+    @Column(length = 1000)
     private String descripcion;
+
+    private String nombreJapo;
 
     public Long getId_detallesYokai() {
         return id_detallesYokai;
@@ -93,5 +95,13 @@ public class DetallesYokai  {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getNombreJapo() {
+        return nombreJapo;
+    }
+
+    public void setNombreJapo(String nombreJapo) {
+        this.nombreJapo = nombreJapo;
     }
 }
