@@ -31,6 +31,4 @@ public class ElementosService {
         newElemento.setImage(elemento.getImage());
         return this.elementoRepository.save(newElemento);
     }
-
-
 }

@@ -13,7 +13,7 @@ public class DetallesYokai  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_detallesYokai;
 
-    private String Nombre;
+    private String nombre;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -23,10 +23,12 @@ public class DetallesYokai  {
 
     private String medalla;
 
+    //@Column(length = 10000)
     private String localizacion;
 
     private String comida;
 
+    //@Column(length = 10000)
     private String descripcion;
 
     public Long getId_detallesYokai() {
@@ -38,11 +40,11 @@ public class DetallesYokai  {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public LocalDateTime getCreatedAt() {
