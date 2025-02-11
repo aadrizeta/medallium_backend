@@ -23,7 +23,7 @@ public class DetallesYokai  {
 
     private String medalla;
 
-    //@Column(length = 10000)
+    @Column(length = 1000)
     private String localizacion;
 
     private String comida;
