@@ -26,6 +26,10 @@ public class DatosCombate {
 
     private  String habilidad;
 
+    @OneToOne
+    @JoinColumn(name = "id_yokai", referencedColumnName = "id_Yokai")
+    private Yokais yokai;
+
     public Long getId_datosCombate() {
         return id_datosCombate;
     }
@@ -72,5 +76,13 @@ public class DatosCombate {
 
     public void setHabilidad(String habilidad) {
         this.habilidad = habilidad;
+    }
+
+    public Yokais getYokai() {
+        return yokai;
+    }
+
+    public void setYokai(Yokais yokai) {
+        this.yokai = yokai;
     }
 }

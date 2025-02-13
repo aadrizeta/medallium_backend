@@ -9,5 +9,4 @@ import java.util.Optional;
 
 @Repository
 public interface DetallesYokaiRepository  extends JpaRepository<DetallesYokai, Long> {
-    Optional<DetallesYokai> findByNombre(String nombre);
 }

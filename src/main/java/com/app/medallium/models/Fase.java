@@ -12,6 +12,7 @@ public class Fase {
 
     private String nombre;
 
+    @Column(length = 1000)
     private String descripcion;
 
     public Long getId() {

@@ -13,8 +13,6 @@ public class DetallesYokai  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_detallesYokai;
 
-    private String nombre;
-
     @CreationTimestamp
     private LocalDateTime createdAt;
 
@@ -23,9 +21,6 @@ public class DetallesYokai  {
 
     private String medalla;
 
-    @Column(length = 1000)
-    private String localizacion;
-
     private String comida;
 
     @Column(length = 1000)
@@ -33,20 +28,16 @@ public class DetallesYokai  {
 
     private String nombreJapo;
 
+    @OneToOne
+    @JoinColumn(name = "id_yokai", referencedColumnName = "id_Yokai")
+    private Yokais yokai;
+
     public Long getId_detallesYokai() {
         return id_detallesYokai;
     }
 
     public void setId_detallesYokai(Long id_detallesYokai) {
         this.id_detallesYokai = id_detallesYokai;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -73,14 +64,6 @@ public class DetallesYokai  {
         this.medalla = medalla;
     }
 
-    public String getLocalizacion() {
-        return localizacion;
-    }
-
-    public void setLocalizacion(String localizacion) {
-        this.localizacion = localizacion;
-    }
-
     public String getComida() {
         return comida;
     }
@@ -103,5 +86,13 @@ public class DetallesYokai  {
 
     public void setNombreJapo(String nombreJapo) {
         this.nombreJapo = nombreJapo;
+    }
+
+    public Yokais getYokai() {
+        return yokai;
+    }
+
+    public void setYokai(Yokais yokai) {
+        this.yokai = yokai;
     }
 }
