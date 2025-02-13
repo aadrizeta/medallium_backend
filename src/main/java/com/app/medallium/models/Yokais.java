@@ -5,24 +5,28 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "yokais")
 public class Yokais {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Yokai;
 
-    private  Long id_Fusion;
+    private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "id_rango", referencedColumnName = "id_Rango")
+    private Rango rango;
 
-    private  Long id_Tribu;
+    @ManyToOne
+    @JoinColumn(name = "id_tribu", referencedColumnName = "id_Tribu")
+    private Tribus tribu;
 
-    private  Long id_Rango;
+    @ManyToOne
+    @JoinColumn(name = "id_elemento", referencedColumnName = "id_Elemento")
+    private Elemento elemento;
 
-    private  Long id_Evolucion;
-
-    private String Elemento;
-
-    private  Long id_Fase;
-
-    private long id_DetallesYokai;
+    @ManyToOne
+    @JoinColumn(name = "id_fase", referencedColumnName = "id")
+    private Fase fase;
 
     public Long getId_Yokai() {
         return id_Yokai;
@@ -32,59 +36,43 @@ public class Yokais {
         this.id_Yokai = id_Yokai;
     }
 
-    public Long getId_Fusion() {
-        return id_Fusion;
+    public String getName() {
+        return name;
     }
 
-    public void setId_Fusion(Long id_Fusion) {
-        this.id_Fusion = id_Fusion;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Long getId_Tribu() {
-        return id_Tribu;
+    public Rango getRango() {
+        return rango;
     }
 
-    public void setId_Tribu(Long id_Tribu) {
-        this.id_Tribu = id_Tribu;
+    public void setRango(Rango rango) {
+        this.rango = rango;
     }
 
-    public Long getId_Rango() {
-        return id_Rango;
+    public Tribus getTribu() {
+        return tribu;
     }
 
-    public void setId_Rango(Long id_Rango) {
-        this.id_Rango = id_Rango;
+    public void setTribu(Tribus tribu) {
+        this.tribu = tribu;
     }
 
-    public Long getId_Evolucion() {
-        return id_Evolucion;
+    public Elemento getElemento() {
+        return elemento;
     }
 
-    public void setId_Evolucion(Long id_Evolucion) {
-        this.id_Evolucion = id_Evolucion;
+    public void setElemento(Elemento elemento) {
+        this.elemento = elemento;
     }
 
-    public String getElemento() {
-        return Elemento;
+    public Fase getFase() {
+        return fase;
     }
 
-    public void setElemento(String elemento) {
-        Elemento = elemento;
-    }
-
-    public Long getId_Fase() {
-        return id_Fase;
-    }
-
-    public void setId_Fase(Long id_Fase) {
-        this.id_Fase = id_Fase;
-    }
-
-    public long getId_DetallesYokai() {
-        return id_DetallesYokai;
-    }
-
-    public void setId_DetallesYokai(long id_DetallesYokai) {
-        this.id_DetallesYokai = id_DetallesYokai;
+    public void setFase(Fase fase) {
+        this.fase = fase;
     }
 }
