@@ -19,6 +19,8 @@ public class DetallesYokai  {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    private String image;
+
     private String medalla;
 
     private String comida;
@@ -94,5 +96,13 @@ public class DetallesYokai  {
 
     public void setYokai(Yokais yokai) {
         this.yokai = yokai;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
