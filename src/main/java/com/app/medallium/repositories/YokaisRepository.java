@@ -10,6 +10,5 @@ import java.util.Optional;
 
 @Repository
 public interface YokaisRepository extends JpaRepository<Yokais, Long> {
-    //Optional<Yokais> findByNameYokai(String nombre);
-
+    Optional<Yokais> findByName(String name);
 }
