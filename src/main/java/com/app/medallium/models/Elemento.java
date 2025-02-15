@@ -10,13 +10,14 @@ public class Elemento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Elemento;
 
-    private String name;
+    private String a_name;
 
     private String fortaleza;
 
     private String debilidad;
 
     @Column(length = 10000)
+
     private String descripcion;
 
     private String image;
@@ -29,12 +30,12 @@ public class Elemento {
         this.id_Elemento = id_Elemento;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return a_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.a_name = nombre;
     }
 
     public String getFortaleza() {

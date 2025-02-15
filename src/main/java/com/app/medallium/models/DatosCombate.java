@@ -26,6 +26,11 @@ public class DatosCombate {
 
     private  String habilidad;
 
+    private int espiritacion;
+
+    private int total;
+
+
     @OneToOne
     @JoinColumn(name = "id_yokai", referencedColumnName = "id_Yokai")
     private Yokais yokai;
@@ -84,5 +89,21 @@ public class DatosCombate {
 
     public void setYokai(Yokais yokai) {
         this.yokai = yokai;
+    }
+
+    public int getEspiritacion() {
+        return espiritacion;
+    }
+
+    public void setEspiritacion(int espiritacion) {
+        this.espiritacion = espiritacion;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 }

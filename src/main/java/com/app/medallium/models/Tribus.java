@@ -21,6 +21,8 @@ public class Tribus {
 
     private String image;
 
+    private String imagenPixel;
+
     private String nombreJapones ;
 
     public Long getId_Tribu() {
@@ -77,5 +79,13 @@ public class Tribus {
 
     public void setNombreJapones(String nombreJapones) {
         this.nombreJapones = nombreJapones;
+    }
+
+    public String getImagenPixel() {
+        return imagenPixel;
+    }
+
+    public void setImagenPixel(String imagenPixel) {
+        this.imagenPixel = imagenPixel;
     }
 }
