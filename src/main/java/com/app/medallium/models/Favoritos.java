@@ -9,11 +9,9 @@ public class Favoritos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Favorito;
 
-   // @ForeignKey
     private Long id_User;
 
-   // @ForeignKey
-    private  Long id_Yokai;
+    private Long id_Yokai;
 
     public Long getId_Favorito() {
         return id_Favorito;
