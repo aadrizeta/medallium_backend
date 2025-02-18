@@ -116,7 +116,7 @@ public class UserService {
         }
         String token = this.createToken(email);
         LoginResponse login = new LoginResponse(user, token);
-        return new ApiDelivery("Login Success", true, 200, null, "login successful");
+        return new ApiDelivery("Login Success", true, 200, login, "login successful");
     }
 
     public String createToken(String email) {
