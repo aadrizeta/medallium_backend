@@ -1,6 +1,7 @@
 package com.app.medallium.services;
 
 import com.app.medallium.models.DetallesYokai;
+import com.app.medallium.models.Users;
 import com.app.medallium.models.Yokais;
 import com.app.medallium.repositories.DetallesYokaiRepository;
 import com.app.medallium.repositories.YokaisRepository;
@@ -8,6 +9,7 @@ import com.app.medallium.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,5 +30,8 @@ public class DetallesYokaiService {
             return detallesYokaiRepository.findByYokaiId(idYokai);
         }
         return Optional.empty();
+    }
+    public List<DetallesYokai> getAllYokais() {
+        return this.detallesYokaiRepository.findAll();
     }
 }
