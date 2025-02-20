@@ -1,18 +1,13 @@
 package com.app.medallium.services;
 
-import com.app.medallium.models.Roles;
-import com.app.medallium.models.Tribus;
-import com.app.medallium.models.Users;
-import com.app.medallium.repositories.RolesRepository;
-import com.app.medallium.repositories.TribusRepository;
-import com.app.medallium.repositories.UserRepository;
+import com.app.medallium.models.*;
+import com.app.medallium.repositories.*;
 import com.app.medallium.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TribuService {
@@ -22,6 +17,7 @@ public class TribuService {
 
     @Autowired
     private JwtUtil jwtUtil;
+
 
     public Tribus createTribu(Tribus tribus) {
         // Si el usuario existe lanzamos un error y no continuamos con el proceso de creación
@@ -37,4 +33,17 @@ public class TribuService {
         newTribu.setNombreJapones(tribus.getNombreJapones());
         return this.tribusRepository.save(newTribu);
     }
+
+    public Optional<Tribus> getTribusByNombre(String nombre) {
+        Optional<Tribus> yokaiOptional = tribusRepository.findByNombre(nombre);
+        if (yokaiOptional.isPresent()) {
+            long idTribu = yokaiOptional.get().getId_Tribu();
+            return tribusRepository.findById(idTribu);
+        }
+        return Optional.empty();
+    }
+    public List<Tribus> getAllTribus() {
+        return this.tribusRepository.findAll();
+    }
+
 }

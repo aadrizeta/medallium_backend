@@ -10,4 +10,5 @@ import java.util.Optional;
 @Repository
 public interface TribusRepository  extends JpaRepository<Tribus, Long> {
     Optional<Tribus> findByNombre(String nombre);
+    Optional<Tribus>findById(long id);
 }
