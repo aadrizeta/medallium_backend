@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface RangoRepository  extends JpaRepository<Rango, Long> {
+public interface RangoRepository extends JpaRepository<Rango, Long> {
     Optional<Rango> findByName(String name);
 }
