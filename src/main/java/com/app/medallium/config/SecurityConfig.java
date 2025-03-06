@@ -31,6 +31,7 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/users/get-users",
                                 "/users/create"
+
                         ).permitAll()
                         .anyRequest().permitAll()
                 )
