@@ -1,11 +1,9 @@
 package com.app.medallium.services;
 
 import com.app.medallium.models.DetallesYokai;
-import com.app.medallium.models.Users;
 import com.app.medallium.models.Yokais;
 import com.app.medallium.repositories.DetallesYokaiRepository;
 import com.app.medallium.repositories.YokaisRepository;
-import com.app.medallium.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +18,6 @@ public class DetallesYokaiService {
     @Autowired
     private YokaisRepository yokaisRepository;
 
-    @Autowired
-    private JwtUtil jwtUtil;
-
     public Optional<DetallesYokai> getDetallesYokaiByName(String name) {
         Optional<Yokais> yokaiOptional = yokaisRepository.findByName(name);
         if (yokaiOptional.isPresent()) {
@@ -31,7 +26,20 @@ public class DetallesYokaiService {
         }
         return Optional.empty();
     }
+
     public List<DetallesYokai> getAllYokais() {
-        return this.detallesYokaiRepository.findAll();
+        return detallesYokaiRepository.findAll();
+    }
+
+    public List<DetallesYokai> getDetallesByTribu(Long idTribu) {
+        return detallesYokaiRepository.findByTribu(idTribu);
+    }
+
+    public List<DetallesYokai> getDetallesByRango(Long idRango) {
+        return detallesYokaiRepository.findByRango(idRango);
+    }
+
+    public List<DetallesYokai> getDetallesByElemento(Long idElemento) {
+        return detallesYokaiRepository.findByElemento(idElemento);
     }
 }
