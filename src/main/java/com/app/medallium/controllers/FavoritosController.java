@@ -27,5 +27,11 @@ public class FavoritosController {
     public List<Favoritos> getFavoritosByUserId(@PathVariable Long userId) {
         return favoritosService.getFavoritosByUserId(userId);
     }
+
+    @DeleteMapping("/delete")
+    public void deleteFavorito(@RequestParam Long userId, @RequestParam Long yokaiId) {
+        favoritosService.deleteFavorito(userId, yokaiId);
+    }
+
 }
 

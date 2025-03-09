@@ -11,7 +11,9 @@ public class Favoritos {
 
     private Long id_User;
 
-    private Long id_Yokai;
+    @OneToOne
+    @JoinColumn(name = "id_yokai", referencedColumnName = "id_detallesYokai")
+    private DetallesYokai detallesYokai;
 
     public Long getId_Favorito() {
         return id_Favorito;
@@ -29,11 +31,11 @@ public class Favoritos {
         this.id_User = id_User;
     }
 
-    public Long getId_Yokai() {
-        return id_Yokai;
+    public DetallesYokai getDetallesYokai() {
+        return detallesYokai;
     }
 
-    public void setId_Yokai(Long id_Yokai) {
-        this.id_Yokai = id_Yokai;
+    public void setDetallesYokai(DetallesYokai detallesYokai) {
+        this.detallesYokai = detallesYokai;
     }
 }
